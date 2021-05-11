@@ -44,6 +44,7 @@
         android:text="Save Data"/>
 
     <Button
+        android:enabled="false"
         android:id="@+id/btn2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
