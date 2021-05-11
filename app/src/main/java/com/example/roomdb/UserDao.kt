@@ -8,7 +8,7 @@ import androidx.room.*
 interface UserDao{
     //@Insert(onConflict = OnConflictStrategy.IGNORE)
     @Insert
-    fun insert(user:User)
+    suspend fun insert(user:User)
 
     @Insert
     fun insertAll(userList: List<User>)
@@ -17,7 +17,7 @@ interface UserDao{
     fun delete(user: User)
 
     @Query("SELECT * FROM User")
-    fun getAllUser():List<User>
+    suspend fun getAllUser():List<User>
 
     @Query("SELECT * FROM User WHERE age >= :age")
     fun getUserWithAge(age:Int):List<User>
